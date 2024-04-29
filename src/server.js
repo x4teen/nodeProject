@@ -7,6 +7,16 @@ let app = express();
 
 app.use(bodyParser.json());
 
+const PORT = 80;
+
+app.listen(PORT, function(err){
+    if (err) {
+        console.log('Error in server setup');
+    } else {
+        console.log("Server listening on Port, ", PORT);
+    }
+})
+
 app.get('/', (request, response) => {
     response.send("<h1>Welcome to Node Demo Server with Express. </h1>");
 })
@@ -51,7 +61,3 @@ app.post('/data', async (request, response) => {
     console.log('data written to file.');
 })
 
-
-app.listen(3000, ()=> {
-    console.log("Server is listening on port 3000.");
-})
