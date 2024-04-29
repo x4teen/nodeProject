@@ -7,7 +7,7 @@ let app = express();
 
 app.use(bodyParser.json());
 
-const PORT = 80;
+const PORT = 3000;
 
 app.listen(PORT, function(err){
     if (err) {
